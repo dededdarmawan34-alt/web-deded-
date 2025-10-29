@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ShopeeKita - Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="brand">
+      <div class="logo">🛍️</div>
+      <div>
+        <h1>Nama Toko</h1>
+        <small>Kualitas & Harga Terbaik</small>
+      </div>
+    </div>
+    <div class="actions">
+      <a class="btn cart" href="cart.html">Keranjang 🛒 <span id="cart-count">0</span></a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h2>Dashboard</h2>
+    <p>Produk unggulan — pilih lalu tambahkan ke keranjang</p>
+  </section>
+
+  <main class="container">
+    <!-- Grid 3x2 sesuai sketsa foto -->
+    <section class="grid">
+      <!-- Replace src with actual product photos if you have them -->
+      <article class="card">
+        <img src="https://via.placeholder.com/360x240?text=Produk+1" alt="Produk 1">
+        <h3>Produk 1</h3>
+        <p class="price">Rp 120.000</p>
+        <button onclick="addToCart('Produk 1',120000,'https://via.placeholder.com/360x240?text=Produk+1')">Tambah ke Keranjang</button>
+      </article>
+
+      <article class="card">
+        <img src="https://via.placeholder.com/360x240?text=Produk+2" alt="Produk 2">
+        <h3>Produk 2</h3>
+        <p class="price">Rp 85.000</p>
+        <button onclick="addToCart('Produk 2',85000,'https://via.placeholder.com/360x240?text=Produk+2')">Tambah ke Keranjang</button>
+      </article>
+
+      <article class="card">
+        <img src="https://via.placeholder.com/360x240?text=Produk+3" alt="Produk 3">
+        <h3>Produk 3</h3>
+        <p class="price">Rp 210.000</p>
+        <button onclick="addToCart('Produk 3',210000,'https://via.placeholder.com/360x240?text=Produk+3')">Tambah ke Keranjang</button>
+      </article>
+
+      <article class="card">
+        <img src="https://via.placeholder.com/360x240?text=Produk+4" alt="Produk 4">
+        <h3>Produk 4</h3>
+        <p class="price">Rp 60.000</p>
+        <button onclick="addToCart('Produk 4',60000,'https://via.placeholder.com/360x240?text=Produk+4')">Tambah ke Keranjang</button>
+      </article>
+
+      <article class="card">
+        <img src="https://via.placeholder.com/360x240?text=Produk+5" alt="Produk 5">
+        <h3>Produk 5</h3>
+        <p class="price">Rp 95.000</p>
+        <button onclick="addToCart('Produk 5',95000,'https://via.placeholder.com/360x240?text=Produk+5')">Tambah ke Keranjang</button>
+      </article>
+
+      <article class="card">
+        <img src="https://via.placeholder.com/360x240?text=Produk+6" alt="Produk 6">
+        <h3>Produk 6</h3>
+        <p class="price">Rp 175.000</p>
+        <button onclick="addToCart(' 6',175000,'https://via.placeholder.com/360x240?text=Produk+6')">Tambah ke Keranjang</button>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>© 2025 Nama Toko — dibuat dengan ❤️</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ShopeeKita - Pembayaran</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="brand">
+      <div class="logo">🛍️</div>
+      <div>
+        <h1>Nama Toko</h1>
+        <small>Pembayaran & Pengiriman</small>
+      </div>
+    </div>
+    <div class="actions">
+      <a class="btn" href="index.html">Kembali</a>
+    </div>
+  </header>
+
+  <main class="container payment-page">
+    <h2>Metode Pembayaran</h2>
+
+    <form id="pay-form">
+      <label>Metode</label>
+      <div class="payment-grid">
+        <label class="pay-option"><input type="radio" name="method" value="OVO" required> OVO</label>
+        <label class="pay-option"><input type="radio" name="method" value="GoPay"> GoPay</label>
+        <label class="pay-option"><input type="radio" name="method" value="DANA"> DANA</label>
+        <label class="pay-option"><input type="radio" name="method" value="Bank"> Transfer Bank</label>
+        <label class="pay-option"><input type="radio" name="method" value="COD"> COD (Bayar di Tempat)</label>
+      </div>
+
+      <label for="courier">Kurir</label>
+      <select id="courier" required>
+        <option value="JNE">JNE</option>
+        <option value="J&T">J&T</option>
+        <option value="SiCepat">SiCepat</option>
+        <option value="AnterAja">AnterAja</option>
+      </select>
+
+      <label for="address">Alamat Lengkap</label>
+      <textarea id="address" placeholder="Nama penerima, jalan, kec, kab, kode pos..." required></textarea>
+
+      <div class="payment-actions">
+        <button type="submit" class="primary">Konfirmasi Pembayaran</button>
+      </div>
+    </form>
+
+    <section id="receipt" class="receipt hidden">
+      <h3>📦 Resi Pembelian</h3>
+      <p><strong>No. Resi:</strong> <span id="resi-id"></span></p>
+      <p><strong>Metode Pembayaran:</strong> <span id="resi-method"></span></p>
+      <p><strong>Kurir:</strong> <span id="resi-courier"></span></p>
+      <p><strong>Alamat:</strong> <span id="resi-address"></span></p>
+      <p><strong>Total:</strong> Rp <span id="resi-total"></span></p>
+
+      <div class="receipt-actions">
+        <button onclick="downloadReceipt()" class="secondary">Unduh Resi (TXT)</button>
+        <button onclick="location.href='index.html'" class="btn">Kembali ke Beranda</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>© 2025 Nama Toko</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

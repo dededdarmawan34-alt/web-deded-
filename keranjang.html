@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keranjang | Deded Store</title>
+  <style>
+    body { font-family: 'Poppins', sans-serif; background: #f5f6fa; margin: 0; }
+    header { background: #2a2a72; color: white; text-align: center; padding: 20px; font-size: 20px; }
+    table { width: 90%; margin: 30px auto; background: white; border-collapse: collapse; border-radius: 10px; overflow: hidden; }
+    th, td { padding: 12px; border-bottom: 1px solid #ddd; text-align: center; }
+    th { background: #009ffd; color: white; }
+    button { padding: 8px 12px; background: #ff6b6b; color: white; border: none; border-radius: 6px; cursor: pointer; }
+    button:hover { background: #ff3b3b; }
+    .checkout-btn {
+      display: block;
+      width: 200px;
+      margin: 20px auto;
+      background: #2a2a72;
+      color: white;
+      padding: 10px;
+      border-radius: 6px;
+      text-decoration: none;
+      text-align: center;
+    }
+    .checkout-btn:hover { background: #1e1e2f; }
+    footer { background: #2a2a72; color: white; text-align: center; padding: 15px; margin-top: 30px; }
+  </style>
+</head>
+<body>
+  <header>Keranjang Belanja 🛍️</header>
+
+  <table>
+    <thead>
+      <tr><th>Produk</th><th>Harga</th><th>Aksi</th></tr>
+    </thead>
+    <tbody id="keranjangBody"></tbody>
+    <tfoot>
+      <tr><td><b>Total</b></td><td id="totalHarga">Rp 0</td><td></td></tr>
+    </tfoot>
+  </table>
+
+  <a href="payment.html" class="checkout-btn">Lanjut ke Pembayaran 💳</a>
+
+  <footer>© 2025 Deded Store</footer>
+
+  <script>
+    let keranjang = JSON.parse(localStorage.getItem("keranjang")) || [];
+    const body = document.getElementById("keranjangBody");
+    let total = 0;
+
+    function render() {
+      body.innerHTML = "";
+      total = 0;
+      keranjang.forEach((item, i) => {
+        total += item.harga;
+        body.innerHTML += `<tr>
+          <td>${item.nama}</td>
+          <td>Rp ${item.harga.toLocaleString()}</td>
+          <td><button onclick="hapus(${i})">Hapus</button></td>
+        </tr>`;
+      });
+      document.getElementById("totalHarga").innerText = "Rp " + total.toLocaleString();
+    }
+
+    function hapus(i) {
+      keranjang.splice(i, 1);
+      localStorage.setItem("keranjang", JSON.stringify(keranjang));
+      render();
+    }
+
+    render();
+  </script>
+</body>
+</html>
